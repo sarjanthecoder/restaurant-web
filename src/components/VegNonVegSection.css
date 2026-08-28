@@ -1,0 +1,111 @@
+.vnv {
+  padding-block: var(--section-y);
+  position: relative;
+  overflow: hidden;
+}
+.vnv .container {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.vnv__heading {
+  font-size: clamp(44px, 6vw, 92px);
+  font-weight: 700;
+  color: var(--ink-pure);
+}
+
+.vnv__split {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: clamp(24px, 3vw, 40px);
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.vnv__side {
+  display: flex;
+  flex-direction: column;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1.5px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.35s ease;
+}
+.vnv__side:hover {
+  transform: translateY(-6px);
+  background: #FFFFFF;
+  box-shadow: var(--glass-shadow-hover);
+  border-color: var(--gold-vibrant);
+}
+
+.vnv__img-wrap {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-bottom: 1.5px solid rgba(166, 124, 30, 0.3);
+}
+.vnv__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+.vnv__side:hover .vnv__img-wrap img { transform: scale(1.06); }
+
+.vnv__content {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vnv__dish-name {
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.5vw, 34px);
+  font-weight: 700;
+  color: var(--ink-pure);
+  line-height: 1.15;
+}
+
+.vnv__desc {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.85;
+  color: var(--ink-body);
+}
+
+.vnv__profile {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+/* Divider */
+.vnv__divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.vnv__divider-line {
+  flex: 1;
+  width: 2px;
+  background: var(--gold-line-bold);
+}
+.vnv__divider-text {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold-vibrant);
+  padding-block: 8px;
+}
+
+@media (max-width: 900px) {
+  .vnv__split { grid-template-columns: 1fr; }
+  .vnv__divider { display: none; }
+}

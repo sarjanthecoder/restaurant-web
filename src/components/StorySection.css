@@ -1,0 +1,198 @@
+.story {
+  padding-block: var(--section-y);
+  position: relative;
+  overflow: hidden;
+}
+
+.story__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(48px, 6vw, 90px);
+  align-items: center;
+}
+
+/* Left */
+.story__left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.story__heading {
+  font-size: clamp(38px, 4.8vw, 68px);
+  font-weight: 700;
+  color: var(--ink-pure);
+  line-height: 1.02;
+}
+
+.story__body {
+  font-family: var(--sans);
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 500;
+  line-height: 1.85;
+  color: var(--ink-body);
+  max-width: 520px;
+}
+
+.story__signature {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+.story__sig-svg {
+  width: 170px;
+  height: auto;
+}
+.story__signature span {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.story__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 16px;
+}
+.story__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  padding: 18px 16px;
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+}
+.story__stat:hover {
+  background: var(--bg-surface);
+  border-color: var(--gold-vibrant);
+  transform: translateY(-3px);
+  box-shadow: var(--glass-shadow-hover);
+}
+.story__stat-num {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.5vw, 42px);
+  font-weight: 700;
+  color: var(--ink-pure);
+  line-height: 1;
+}
+.story__stat-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Right */
+.story__right {
+  position: relative;
+  min-height: 520px;
+}
+
+.story__year {
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  font-family: var(--serif);
+  font-size: clamp(90px, 11vw, 160px);
+  font-weight: 700;
+  color: var(--gold-border);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.story__year-label {
+  position: absolute;
+  top: 60px;
+  right: 12px;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  writing-mode: vertical-rl;
+  z-index: 1;
+}
+
+.story__img-main {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  margin-left: auto;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 4px solid var(--bg-surface);
+  box-shadow: 0 24px 64px var(--gold-glow);
+}
+.story__img-main img { width: 100%; height: 390px; object-fit: cover; }
+
+.story__img-secondary {
+  position: absolute;
+  bottom: 20px;
+  left: -20px;
+  z-index: 3;
+  width: 230px;
+  border: 4px solid var(--bg-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+}
+.story__img-secondary img { width: 100%; height: 160px; object-fit: cover; }
+
+.story__stat-panel {
+  position: absolute;
+  bottom: -24px;
+  right: 10px;
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  border: 1.5px solid var(--gold-border-bold);
+  border-radius: var(--radius-md);
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 4;
+  box-shadow: var(--glass-shadow);
+}
+.story__panel-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.story__panel-icon {
+  color: var(--gold-vibrant);
+  font-size: 13px;
+  font-weight: bold;
+}
+.story__panel-txt {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-pure);
+}
+
+@media (max-width: 1023px) {
+  .story__grid { grid-template-columns: 1fr; gap: 60px; }
+  .story__right { min-height: 400px; }
+  .story__img-secondary { left: 0; bottom: 10px; }
+}
+
+@media (max-width: 767px) {
+  .story__stats { grid-template-columns: 1fr; }
+  .story__year-label { display: none; }
+}

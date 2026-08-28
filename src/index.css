@@ -1,0 +1,348 @@
+/* ============================================
+   EMBER & OAK — 3 Ultra-Luxury Theme Modes
+   1. Champagne Gold (Warm Luxury)
+   2. Pure White (Ultra-Clean Editorial)
+   3. Midnight Noir (Obsidian Dark Gold)
+============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 1. Warm Champagne Gold Theme (Default) ── */
+:root, [data-theme="champagne"] {
+  --bg-main:        #FAF7F0;
+  --bg-surface:     #FFFFFF;
+  --bg-surface-2:   #F5EFE4;
+  --bg-card:        rgba(255, 255, 255, 0.88);
+  --bg-card-hover:  #FFFFFF;
+  
+  --ink-pure:       #0A0A0A;
+  --ink:            #171412;
+  --ink-body:       #2E2721;
+  --ink-muted:      #524B43;
+  --ink-faint:      #786F65;
+
+  --gold:           #A67C1E;
+  --gold-vibrant:   #C59B27;
+  --gold-light:     #E5C158;
+  --gold-pale:      #F8EED9;
+  --gold-border:    rgba(197, 155, 39, 0.38);
+  --gold-border-bold: rgba(197, 155, 39, 0.65);
+  --gold-gradient:  linear-gradient(135deg, #D4AF37 0%, #C59B27 50%, #A67C1E 100%);
+  --gold-glow:      rgba(197, 155, 39, 0.22);
+
+  --glass-bg:       rgba(255, 255, 255, 0.85);
+  --glass-blur:     blur(16px);
+  --glass-border:   rgba(197, 155, 39, 0.35);
+  --glass-shadow:   0 16px 36px rgba(166, 124, 30, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --glass-shadow-hover: 0 22px 50px rgba(197, 155, 39, 0.22), 0 8px 24px rgba(0, 0, 0, 0.06);
+
+  --veg-color:      #1E7E34;
+  --veg-border:     #28A745;
+  --veg-bg:         rgba(40, 167, 69, 0.12);
+
+  --nonveg-color:   #A71D2A;
+  --nonveg-border:  #C82333;
+  --nonveg-bg:      rgba(200, 35, 51, 0.12);
+
+  --nav-bg:         rgba(255, 255, 255, 0.92);
+  --nav-border:     rgba(197, 155, 39, 0.4);
+}
+
+/* ── 2. Pure White Editorial Luxury Theme ── */
+[data-theme="pure-white"] {
+  --bg-main:        #FFFFFF;
+  --bg-surface:     #FFFFFF;
+  --bg-surface-2:   #F9F9F9;
+  --bg-card:        #FFFFFF;
+  --bg-card-hover:  #FAFAFA;
+
+  --ink-pure:       #000000;
+  --ink:            #111111;
+  --ink-body:       #222222;
+  --ink-muted:      #555555;
+  --ink-faint:      #888888;
+
+  --gold:           #A67C1E;
+  --gold-vibrant:   #C59B27;
+  --gold-light:     #D4AF37;
+  --gold-pale:      #F5F5F5;
+  --gold-border:    rgba(166, 124, 30, 0.3);
+  --gold-border-bold: rgba(166, 124, 30, 0.7);
+  --gold-gradient:  linear-gradient(135deg, #C59B27 0%, #A67C1E 100%);
+  --gold-glow:      rgba(166, 124, 30, 0.12);
+
+  --glass-bg:       rgba(255, 255, 255, 0.95);
+  --glass-blur:     blur(12px);
+  --glass-border:   rgba(166, 124, 30, 0.3);
+  --glass-shadow:   0 10px 30px rgba(0, 0, 0, 0.05);
+  --glass-shadow-hover: 0 16px 44px rgba(0, 0, 0, 0.1);
+
+  --veg-color:      #1E7E34;
+  --veg-border:     #28A745;
+  --veg-bg:         rgba(40, 167, 69, 0.08);
+
+  --nonveg-color:   #A71D2A;
+  --nonveg-border:  #C82333;
+  --nonveg-bg:      rgba(200, 35, 51, 0.08);
+
+  --nav-bg:         rgba(255, 255, 255, 0.98);
+  --nav-border:     rgba(166, 124, 30, 0.35);
+}
+
+/* ── 3. Dark Midnight Noir Gold Theme ── */
+[data-theme="noir"] {
+  --bg-main:        #0A0D10;
+  --bg-surface:     #12161B;
+  --bg-surface-2:   #181D24;
+  --bg-card:        rgba(18, 22, 27, 0.9);
+  --bg-card-hover:  #1A212A;
+
+  --ink-pure:       #FFFFFF;
+  --ink:            #F4EFE6;
+  --ink-body:       #D8D1C5;
+  --ink-muted:      #9E9689;
+  --ink-faint:      #6E685E;
+
+  --gold:           #D4AF37;
+  --gold-vibrant:   #E5C158;
+  --gold-light:     #F3D98A;
+  --gold-pale:      rgba(229, 193, 88, 0.15);
+  --gold-border:    rgba(229, 193, 88, 0.35);
+  --gold-border-bold: rgba(229, 193, 88, 0.65);
+  --gold-gradient:  linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #A67C1E 100%);
+  --gold-glow:      rgba(229, 193, 88, 0.3);
+
+  --glass-bg:       rgba(18, 22, 27, 0.85);
+  --glass-blur:     blur(16px);
+  --glass-border:   rgba(229, 193, 88, 0.3);
+  --glass-shadow:   0 16px 40px rgba(0, 0, 0, 0.45), 0 0 20px rgba(229, 193, 88, 0.08);
+  --glass-shadow-hover: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(229, 193, 88, 0.22);
+
+  --veg-color:      #48D068;
+  --veg-border:     #28A745;
+  --veg-bg:         rgba(40, 167, 69, 0.2);
+
+  --nonveg-color:   #FF5C6C;
+  --nonveg-border:  #C82333;
+  --nonveg-bg:      rgba(200, 35, 51, 0.2);
+
+  --nav-bg:         rgba(10, 13, 16, 0.92);
+  --nav-border:     rgba(229, 193, 88, 0.35);
+}
+
+:root {
+  /* Typography Families */
+  --serif:        'Cormorant Garamond', 'Cinzel', Georgia, serif;
+  --display:      'Cinzel', 'Cormorant Garamond', Georgia, serif;
+  --sans:         'Plus Jakarta Sans', 'Jost', system-ui, sans-serif;
+
+  /* Curved Radii */
+  --radius-sm:    10px;
+  --radius-md:    16px;
+  --radius-lg:    24px;
+  --radius-xl:    32px;
+  --radius-pill:  999px;
+
+  /* Spacing */
+  --section-y:    clamp(80px, 8vw, 140px);
+  --container:    1440px;
+  --gutter:       clamp(24px, 4vw, 80px);
+
+  --ease-luxury:  cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg-main);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* Ambient Radial Glows (Universal for all pages) */
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%;
+  right: -5%;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 5%;
+  left: -10%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: var(--gold-vibrant); border-radius: 3px; }
+
+/* ── Selection ── */
+::selection { background: var(--gold-pale); color: var(--ink-pure); }
+
+/* ── Gold Label ── */
+.label-gold {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-card);
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--gold-border);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+.label-gold::before {
+  content: '✦';
+  font-size: 10px;
+  color: var(--gold-vibrant);
+}
+
+/* ── Section Headings ── */
+.display-heading {
+  font-family: var(--serif);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  color: var(--ink-pure);
+}
+
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 36px;
+  background: var(--gold-gradient);
+  color: #FFFFFF;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-light);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  box-shadow: 0 8px 24px var(--gold-glow);
+  transition: all 0.3s var(--ease-luxury);
+  text-decoration: none;
+}
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 34px var(--gold-glow);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 34px;
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  color: var(--ink-pure);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--ink-pure);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s var(--ease-luxury);
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: var(--gold-vibrant);
+  color: var(--gold);
+  background: var(--bg-surface);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px var(--gold-glow);
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(8px);
+}
+.badge-veg {
+  color: var(--veg-color);
+  border: 1.5px solid var(--veg-border);
+  background: var(--veg-bg);
+}
+.badge-nonveg {
+  color: var(--nonveg-color);
+  border: 1.5px solid var(--nonveg-border);
+  background: var(--nonveg-bg);
+}
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.badge-veg .badge-dot { background: var(--veg-color); }
+.badge-nonveg .badge-dot { background: var(--nonveg-color); }
