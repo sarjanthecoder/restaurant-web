@@ -1,41 +1,79 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
   <defs>
+    <!-- Veg Green Gradient -->
+    <linearGradient id="vegGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#48D068" />
+      <stop offset="100%" stop-color="#1E7E34" />
+    </linearGradient>
+
+    <!-- Non-Veg Crimson Ember Gradient -->
+    <linearGradient id="nonVegGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5C6C" />
+      <stop offset="50%" stop-color="#C82333" />
+      <stop offset="100%" stop-color="#800C18" />
+    </linearGradient>
+
+    <!-- Royal Gold Gradient -->
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F3D98A" />
+      <stop offset="0%" stop-color="#FCE59F" />
       <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#996515" />
     </linearGradient>
-    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1A1F26" />
-      <stop offset="100%" stop-color="#0A0D10" />
-    </radialGradient>
-    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+
+    <!-- Soft Ambient Glow Filter -->
+    <filter id="plateShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+    
+    <filter id="glowGarnish" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
 
-  <!-- Background Circle -->
-  <circle cx="64" cy="64" r="60" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="4" />
+  <!-- 1. White Ceramic Outer Plate Container -->
+  <circle cx="64" cy="64" r="60" fill="#FFFFFF" stroke="url(#goldGrad)" stroke-width="3.5" filter="url(#plateShadow)" />
   
-  <!-- Outer Gold Dashed Accent Ring -->
-  <circle cx="64" cy="64" r="52" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6" />
+  <!-- 2. Dual Accent Ring: Left Green (Veg) & Right Red (Non-Veg) -->
+  <path d="M64 8 A56 56 0 0 0 64 120" fill="none" stroke="url(#vegGrad)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M64 120 A56 56 0 0 0 64 8" fill="none" stroke="url(#nonVegGrad)" stroke-width="2.5" stroke-linecap="round" />
 
-  <!-- Central Luxury Ember & Flame Icon -->
-  <g filter="url(#goldGlow)">
-    <!-- Royal Diamond Star -->
-    <path d="M64 24 L70 42 L88 48 L70 54 L64 72 L58 54 L40 48 L58 42 Z" fill="url(#goldGrad)" />
-    
-    <!-- Culinary Flame & Leaves -->
-    <path d="M64 56 C74 70 82 80 82 92 C82 102 74 108 64 108 C54 108 46 102 46 92 C46 80 54 70 64 56 Z" fill="none" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linejoin="round" />
-    
-    <!-- Inner Flame Core -->
-    <path d="M64 72 C68 80 72 86 72 93 C72 98 68 101 64 101 C60 101 56 98 56 93 C56 86 60 80 64 72 Z" fill="url(#goldGrad)" />
-    
-    <!-- Four Corner Stars -->
-    <circle cx="64" cy="16" r="2" fill="url(#goldGrad)" />
-    <circle cx="112" cy="64" r="2" fill="url(#goldGrad)" />
-    <circle cx="64" cy="112" r="2" fill="url(#goldGrad)" />
-    <circle cx="16" cy="64" r="2" fill="url(#goldGrad)" />
+  <!-- 3. Center Inner Plate Cavity -->
+  <circle cx="64" cy="64" r="48" fill="#FAF8F5" stroke="#E8E2D5" stroke-width="1.5" />
+
+  <!-- 4. Top Crown Gold Star -->
+  <path d="M64 20 L67 29 L76 32 L67 35 L64 44 L61 35 L52 32 L61 29 Z" fill="url(#goldGrad)" />
+
+  <!-- 5. Left Side: Fresh Green Organic Leaf & Herb Sprig (VEG) -->
+  <g filter="url(#glowGarnish)">
+    <!-- Main Basil / Mint Leaf -->
+    <path d="M42 66 C32 54 40 40 54 44 C56 56 48 68 42 66 Z" fill="url(#vegGrad)" />
+    <!-- Leaf Center Vein -->
+    <path d="M44 63 Q50 54 53 46" stroke="#FFFFFF" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.8" />
+    <!-- Small Companion Leaf -->
+    <path d="M34 76 C28 68 34 58 44 62 C45 70 39 78 34 76 Z" fill="url(#vegGrad)" />
+    <!-- Herb dot -->
+    <circle cx="36" cy="46" r="2.5" fill="#28A745" />
   </g>
+
+  <!-- 6. Right Side: Sizzling Roasted Chicken Leg / Ember Meat Crest (NON-VEG) -->
+  <g filter="url(#glowGarnish)">
+    <!-- Juicy Roasted Chicken Drumstick Meat -->
+    <path d="M66 50 C76 40 92 48 94 62 C96 76 82 86 70 82 C64 78 60 62 66 50 Z" fill="url(#nonVegGrad)" />
+    <!-- Meat Sear Glow Highlight -->
+    <path d="M72 56 Q82 50 88 58" stroke="#FFE3A0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.75" />
+    <!-- Chicken Bone End Handle -->
+    <path d="M88 78 L98 88" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+    <!-- Bone Knuckle Knob -->
+    <circle cx="99" cy="89" r="3" fill="#FFFFFF" />
+    <circle cx="95" cy="92" r="2.5" fill="#FFFFFF" />
+  </g>
+
+  <!-- 7. Center Live Flame & Sparkle Fusion -->
+  <path d="M64 68 C68 76 71 82 71 88 C71 93 68 96 64 96 C60 96 57 93 57 88 C57 82 60 76 64 68 Z" fill="url(#goldGrad)" />
+  <circle cx="64" cy="62" r="2" fill="#D4AF37" />
+
+  <!-- 8. Subtle Veg & Non-Veg Mini Dots -->
+  <circle cx="28" cy="64" r="2.5" fill="#28A745" />
+  <circle cx="100" cy="64" r="2.5" fill="#C82333" />
 </svg>
